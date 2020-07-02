@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="center">
-    {{!-- <img src="/assets/img/burger.jpg" height="200"> --}}
+  <div class=" rounded text-center">
+    <img src="/assets/images/bigBurger_01.png" height="225">
   </div>
   <h1>Eat-Da-Burger</h1>
 
@@ -8,16 +8,16 @@
   <div>{{error}}</div>
   {{/if}}
 
-  <div class="row center">
+  <div class="row text-center">
     <div class="col-md-6">
       <ul>
         {{#each burgers}}
         {{#unless devoured}}
         <div class="row">
-          <div class="col-md-9">
-            <p class="uneaten center">{{this.id}}. {{this.burger_name}}</p>
+          <div class="col-md-8">
+            <p class="uneaten text-center">{{this.id}}. {{this.burger_name}}</p>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <button data-id={{this.id}} class="devour btn center-block"> Devour it! </button>
           </div>
         </div>
@@ -30,7 +30,7 @@
       <ul>
         {{#each burgers}}
         {{#if devoured}}
-        <p class="eaten center">{{this.id}}. {{this.burger_name}}</p>
+        <p class="eaten text-center">{{this.id}}. {{this.burger_name}}</p>
         {{/if}}
         {{/each}}
       </ul>
@@ -45,8 +45,8 @@
           <input type="text" id="burgerName" name="name" class="center-block burger_field">
         </div>
 
+        <h4>Enter in a burger you would like to eat and then click the "Submit" button.</h4>
         <button type="submit" id="addBurger" class="btn-primary">Submit</button>
-        <h5>Enter a burger you want to eat Click the "Submit" button.</h5>
       </form>
 
     </div>
