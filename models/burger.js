@@ -1,22 +1,16 @@
-var orm = require("../config/orm.js");
+
+var orm = require("../config/orm");
+
 var burger = {
-  all: function(cb) {
-    orm.all("burgers", function(res) {
-      cb(res);
-    });
+  all: async () => {
+    return await orm.selectAll()
   },
-  create: function(name, cb) {
-    orm.create("burgers", [
-      "burger_name", "devoured"
-    ], [
-      name, false
-    ], cb);
+  create: async (burgerName) => {
+    return await orm.insertburger(burgerName)
   },
-  update: function(id, cb) {
-    var condition = "id=" + id;
-    orm.update("burgers", {
-      devoured: true
-    }, condition, cb);
-  }
+  update: async (burgerId) => {
+    return await orm.updateburger(burgerId)
+  },
 };
+
 module.exports = burger;

@@ -1,6 +1,7 @@
+//This file will connect to the database.
 // Set up MySQL connection.
 var mysql = require("mysql");
-
+var util = require('util');
 var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
@@ -10,7 +11,7 @@ var connection = mysql.createConnection({
 });
 
 // Make connection.
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
@@ -19,4 +20,10 @@ connection.connect(function(err) {
 });
 
 // Export connection for our ORM to use.
-module.exports = connection;
+//bind method creates a new function that, when called has it's 'this' keyword set to the provided value. 
+const query = util.promisify(connection.query).bind(connection);
+
+module.exports = {
+  query: query,
+  connection: connection,
+}

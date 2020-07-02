@@ -1,38 +1,42 @@
+//DEPENDENCIES
 var express = require("express");
-
 var router = express.Router();
-
-// Import the model (cat.js) to use its database functions.
+//Import the burger Model
 var burger = require("../models/burger.js");
 
-// Create all our routes and set up logic within those routes where required.
-router.get("/", function (req, res) {
-    burger.all(function (data) {
-        res.render("index", {burger_data: data})
+router.get("/", async (req, res) => {
+    try {
+        const data = await burger.all();
+        var hbsObject = {
+            burgers: data
+        };
+        console.log(hbsObject);
+        res.render("index", hbsObject);
+    } catch (err) {
+        console.error(err);
+        res.render("index", { burgers: [], error: err })
+    }
+});
+
+router.post("/api/burger", async (req, res) => {
+    console.log(req)
+    const response = await burger.create(req.body.data.burgerName);
+    console.log(response);
+    res.json({
+        status: 200
     });
 });
 
-router.post("/burger/create", function (req, res) {
-    burger.create([
-        "name", "devoured"
-    ], [
-        req.body.name, req.body.devoured
-    ], function (result) {
-        console.log(result)
-        // Send back the ID of the new quote
-        res.json({ id: result.insertId });
-        res.redirect("/");
+router.put("/api/burger/:id", async (req, res) => {
+    console.log(req)
+    const response = await burger.update(req.params.id);
+    console.log(response);
+    res.json({
+        status: 200
     });
 });
 
-router.put("/burger/:id", function (req, res) {
-    burger.update(req.params.id, function(req, res) {
-        console.log(result);
-        res.sendStatus(200);
-    })
-
-})
-
+module.exports = router;
 
 
 // Export routes for server.js to use.
