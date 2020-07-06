@@ -12,13 +12,13 @@
     <div class="col-md-6">
       <ul>
         {{#each burgers}}
-        {{#unless devoured}}
+        {{#unless this.devoured}}
         <div class="row">
           <div class="col-md-8">
-            <p class="uneaten text-center">{{this.id}}. {{this.burger_name}}</p>
+            <p class="uneaten text-center">{{this.id}}. {{this.name}}</p>
           </div>
           <div class="col-md-4">
-            <button data-id={{this.id}} class="devour btn center-block"> Devour it! </button>
+            <button data-id={{this.id}} class="devour btn "> Devour it! </button>
           </div>
         </div>
         {{/unless}}
@@ -26,11 +26,11 @@
       </ul>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-2">
       <ul>
         {{#each burgers}}
-        {{#if devoured}}
-        <p class="eaten text-center">{{this.id}}. {{this.burger_name}}</p>
+        {{#if this.devoured}}
+        <p class="eaten text-center">{{this.id}}. {{this.name}}</p>
         {{/if}}
         {{/each}}
       </ul>

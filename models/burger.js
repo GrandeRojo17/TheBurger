@@ -6,10 +6,10 @@ var burger = {
     return await orm.selectAll()
   },
   create: async (burgerName) => {
-    return await orm.insertburger(burgerName)
+    return await orm.insertBurger(burgerName)
   },
   update: async (burgerId) => {
-    return await orm.updateburger(burgerId)
+    return await orm.updateBurger(burgerId)
   },
 };
 

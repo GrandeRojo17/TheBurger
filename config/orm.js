@@ -11,7 +11,7 @@ async function selectAll() {
   const query = `SELECT * FROM burgers`;
   const result = await connection.query(query);
 
-  return result
+  return result;
 }
 
 // Insert and individual burger. 
@@ -35,9 +35,9 @@ async function updateBurger(id) {
 }
 //place the functions inside of an object
 const orm = {
-  updateOne: updateBurger,
+  updateBurger: updateBurger,
   selectAll: selectAll,
-  insertOne: insertBurger,
+  insertBurger: insertBurger,
 }
 
 module.exports = orm;

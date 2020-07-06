@@ -1,12 +1,12 @@
 $(document).ready(function () {
-    //// Make sure we wait to attach our handlers until the DOM is fully loaded.
+
     $(function () {
         $(".devour").on("click", function (event) {
-            console.log("test");
+
             event.preventDefault();
 
             var burger_id = $(this).data("id");
-            console.log(burger_id);
+            console.log(`Devouring the burger #${burger_id} `);
 
             // Send the PUT request.
             $.ajax("/api/burger/" + burger_id,
@@ -23,7 +23,7 @@ $(document).ready(function () {
     // add burger click event
     $(function () {
         $("#addBurger").on("click", function (event) {
-            console.log("test");
+
             event.preventDefault();
 
             var newBurger = {
