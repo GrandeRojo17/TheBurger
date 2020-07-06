@@ -16,7 +16,7 @@ async function selectAll() {
 
 // Insert and individual burger. 
 async function insertBurger(burgerName) {
-  const query = `INSERT INTO burgers (burger_name) VALUES ("${burgerName}");`;
+  const query = `INSERT INTO burgers (name) VALUES ("${burgerName}");`;
   const result = await connection.query(query);
 
   return result;

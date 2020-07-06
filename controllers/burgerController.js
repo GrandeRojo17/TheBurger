@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
 router.post("/api/burger", async (req, res) => {
     console.log(req)
     const response = await burger.create(req.body.data.burgerName);
-    console.log(response);
+    console.log("Here is the response for post burger: " + response);
     res.json({
         status: 200
     });
