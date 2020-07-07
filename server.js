@@ -27,3 +27,9 @@ app.listen(PORT, function () {
     // Log (server-side) when our server has started
     console.log("Server listening on: http://localhost:" + PORT );
 });
+/*I dont have a Ensure that you have at least one HTML page being served at the "/" route. Example:
+
+    ```js
+    app.get("/", function(req, res) {
+      res.json(path.join(__dirname, "public/index.html"));
+    }); */

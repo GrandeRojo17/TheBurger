@@ -2,17 +2,10 @@
   "name": "theburger",
   "version": "1.0.0",
   "description": "by David Yennerell a.k.a Granderojo17 on 06/10/20 ![Licenses]ad(https://img.shields.io/badge/license-MIT-blue.svg)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  {
-    "development": {
-      "username": "ib15mp80gz5evd46",
-      "password": "ttt2mk96d2ds6b0g",
-      "host": "d9c88q3e09w6fdb2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-      "database": "tqh6j94ozewzbfx8"
-    }
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
