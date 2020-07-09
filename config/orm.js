@@ -27,8 +27,7 @@ async function updateBurger(id) {
   const query = `
       UPDATE burgers
       SET devoured = true
-      WHERE id = ${id}
-  `;
+      WHERE id = ${id}`;
   const result = await connection.query(query);
 
   return result;
