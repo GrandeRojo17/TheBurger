@@ -4,7 +4,7 @@ by David Yennerell a.k.a Granderojo17 on 07/06/20
 ![Licenses](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## **Description**
-(place for link)
+(https://burger-creator-3000.herokuapp.com/)
 
 A web page where you can submit a burger to the list of sandwiches and choose to "devour" the sandwhich or not. Clickable buttons and a text box where you can add a new type of buger if you wish.
 
@@ -34,14 +34,14 @@ nodemon server.js
 
 # **Usage**
 
-Build a menu of bugers you would like to eat and then click the 
+Build a menu of burgers you would like to eat and then click the 
 "Devour it!' button to "eat" the selected burger.
 
 ### This project is licensed under the MIT license.
 
 # **Contributing**
 
-none other contributers 
+I reached out for help on Heroku to @emcarlisle so thank you for the help Em!
 
 # **Questions**
 
